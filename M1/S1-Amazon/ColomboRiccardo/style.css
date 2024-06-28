@@ -14,6 +14,7 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   --darkest-bg-color: #131921;
   --darker-bg-color: #232f3e;
+  background-color: antiquewhite;
 }
 
 .logoImage {
@@ -94,14 +95,33 @@ footer div {
 
 .third-section {
   padding: 0.5rem;
+  background-color: white;
+  margin: 1rem;
 }
 
 .third-section div {
   margin-bottom: 1rem;
+  display: flex;
 }
+
 .third-section img {
-  width: 300px;
+  width: 23%;
   height: 250px;
-  margin-right: 1rem;
+  margin: auto;
   border-radius: 0.5rem;
+}
+
+.big-section {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.big-section img {
+  width: 100%;
+  margin-bottom: 0.6rem;
+}
+
+.carousel {
+  margin: auto;
+  width: 96%;
 }
