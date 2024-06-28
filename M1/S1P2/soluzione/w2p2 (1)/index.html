@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      .bg-dark {
+        background-color: #222f3e;
+      }
+      .bg-light-dark {
+        background-color: #364759;
+      }
+      .bg-green {
+        background-color: #469576;
+      }
+      .bg-yellow {
+        background-color: #f56600;
+      }
+      .color-white {
+        color: #eaeded;
+      }
+      .bg-white {
+        background-color: white;
+      }
+      .mb-2 {
+        margin-bottom: 2rem;
+      }
+      .mr-1 {
+        margin-right: 1rem;
+      }
+      header div {
+        padding: 0.5rem 2rem;
+      }
+      header img {
+        height: 40px;
+      }
+      header span {
+        margin-right: 1rem;
+        font-weight: 400;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+      .w-100 {
+        width: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      main {
+        background-color: #eaeded;
+        padding: 2rem;
+      }
+
+      .row {
+        width: 100%;
+        text-align: center;
+      }
+      .img {
+        width: 304px;
+        height: 379px;
+        object-fit: cover;
+        margin: 1rem;
+        border-radius: 20px;
+        -webkit-box-shadow: 9px 7px 15px 0px rgba(34, 60, 80, 0.2);
+        -moz-box-shadow: 9px 7px 15px 0px rgba(34, 60, 80, 0.2);
+        box-shadow: 9px 7px 15px 0px rgba(34, 60, 80, 0.2);
+      }
+      .title-container {
+        text-align: left;
+        padding: 1rem 1rem 0 1.5rem;
+      }
+      .title {
+        font-size: 1.3rem;
+      }
+      .subtitle {
+        font-weight: 600;
+        color: #007185;
+        margin-left: 1rem;
+      }
+
+      #img-fw {
+        width: 100%;
+      }
+      .img_container {
+        text-align: center;
+        margin-top: 2rem;
+      }
+      footer {
+        width: 100%;
+        text-align: center;
+      }
+      #back-to-top {
+        padding: 1rem;
+      }
+      #back-to-top a {
+        font-weight: 600;
+      }
+      #footer-logo {
+        padding: 4rem;
+      }
+      #footer-logo img {
+        height: 60px;
+      }
+      #bg-image {
+        background-image: url("./assets/bg-image.png");
+        width: 100%;
+        height: 100px;
+      }
+      .cards-row {
+        width: 100%;
+
+        margin-top: 2rem;
+        padding: 20px;
+      }
+      .card-squad {
+        width: 24%;
+        display: inline-block;
+      }
+      .card-header {
+        font-size: 21px;
+        font-weight: 600;
+        padding: 0 2rem;
+      }
+      .quadrant-container {
+        width: 45%;
+        display: inline-block;
+        position: relative;
+
+      }
+
+      .quadrant-container img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+      }
+      .quadrant-container p {
+        margin: 0;
+        font-size: 12px;
+      }
+      .card-body {
+        padding: 0 2rem;
+      }
+
+      .card-row {
+        /* height: 50%; */
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+      .card-footer {
+        font-size: 13px;
+        padding: 0.5rem 2rem;
+        color: #007185;
+      }
+      .quadrant-container img.bottom-right-corner {
+        position: absolute;
+        right: -10px;
+        bottom: 0px;
+        width: 40px;
+        height: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="w-100">
+      <div class="bg-dark">
+        <img src="./assets/logo.png" />
+      </div>
+
+      <div class="bg-light-dark color-white">
+        <span>All</span>
+        <span>Today's deals</span>
+        <span>Customer Service</span>
+        <span>Registry</span>
+        <span>Gift Cards</span>
+        <span>Sell</span>
+      </div>
+    </header>
+    <main>
+      <div
+        class="bg-yellow text-center color-white mb-2"
+        style="padding: 0.5rem"
+      >
+        <span>Shop All Holiday Gift Cards</span>
+      </div>
+      <div
+        id="bg-image"
+        class="mb-2 color-white text-center"
+        style="padding: 3rem 0"
+      >
+        <h1>Holiday Gift Guides</h1>
+        <h3>Be a go-gifter</h3>
+      </div>
+      <div class="row bg-white">
+        <div class="title-container">
+          <span class="title">Find the perfect gift</span>
+          <span class="subtitle">Shop now</span>
+        </div>
+
+        <img class="img" src="./assets/img_1.jpg" />
+        <img class="img" src="./assets/img_2.jpg" />
+        <img class="img" src="./assets/img_3.jpg" />
+        <img class="img" src="./assets/img_4.jpg" />
+      </div>
+      <div class="cards-row">
+        <div class="card-squad bg-white mr-1">
+          <div class="card-header">
+            <p>Gaming accessories</p>
+          </div>
+          <div class="card-body">
+            <div class="card-row">
+              <div class="quadrant-container">
+                <img src="./assets/img_15.jpg" />
+                <p>Headsets</p>
+              </div>
+              <div class="quadrant-container">
+                <img src="./assets/img_16.jpg" />
+                <p>Keyboards</p>
+              </div>
+            </div>
+            <div class="card-row">
+              <div class="quadrant-container">
+                <img src="./assets/img_17.jpg" />
+                <p>Computer mice</p>
+              </div>
+              <div class="quadrant-container">
+                <img src="./assets/img_18.jpg" />
+                <p>Chairs</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <p>See more</p>
+          </div>
+        </div>
+        <div class="card-squad bg-white mr-1">
+          <div class="card-header">
+            <p>Comfy styles</p>
+          </div>
+          <div class="card-body">
+            <div class="card-row">
+              <div class="quadrant-container">
+                <img src="./assets/img_19.jpg" />
+                <img src="./assets/new.png" class="bottom-right-corner"/>
+                <p>Sweatshirts</p>
+              </div>
+              <div class="quadrant-container">
+                <img src="./assets/img_20.jpg" />
+                <p>Joggers</p>
+              </div>
+            </div>
+            <div class="card-row">
+              <div class="quadrant-container">
+                <img src="./assets/img_21.jpg" />
+                <p>Cardigans</p>
+              </div>
+              <div class="quadrant-container">
+                <img src="./assets/img_22.jpg" />
+                <img src="./assets/new.png" class="bottom-right-corner"/>
+
+                <p>Easy tees</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <p>See more</p>
+          </div>
+        </div>
+        <div class="card-squad bg-white mr-1">
+          <div class="card-header">
+            <p>Holiday Gifts</p>
+          </div>
+          <div class="card-body">
+            <div class="card-row">
+              <div class="quadrant-container">
+                <img src="./assets/img_11.jpg" />
+                <p>Electronics</p>
+              </div>
+              <div class="quadrant-container">
+                <img src="./assets/img_12.jpg" />
+                <img src="./assets/new.png" class="bottom-right-corner"/>
+
+                <p>Fashion</p>
+              </div>
+            </div>
+            <div class="card-row">
+              <div class="quadrant-container">
+                <img src="./assets/img_13.jpg" />
+                <p>Toys</p>
+              </div>
+              <div class="quadrant-container">
+                <img src="./assets/img_14.jpg" />
+                <p>Beauty</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <p>Shop all gift guides</p>
+          </div>
+        </div>
+        <div class="card-squad bg-white">
+          <div class="card-header">
+            <p>Add joy to their wish list</p>
+          </div>
+          <div class="card-body">
+            <div class="card-row">
+              <div class="quadrant-container">
+                <img src="./assets/img_24.jpg" />
+                <p>Holiday toy list</p>
+              </div>
+              <div class="quadrant-container">
+                <img src="./assets/img_25.jpg" />
+                <p>Electronic Gifts</p>
+              </div>
+            </div>
+            <div class="card-row">
+              <div class="quadrant-container">
+                <img src="./assets/img_26.jpg" />
+                <p>Home Gifts</p>
+              </div>
+              <div class="quadrant-container">
+                <img src="./assets/img_27.jpg" />
+                <p>Fashion Gifts</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-footer">
+            <p>Shop all gift guides</p>
+          </div>
+        </div>
+      </div>
+      <div class="img_container">
+        <img id="img-fw" src="./assets/img_9.png" />
+        <span class="title">Play the gifting game</span>
+        <span class="subtitle">Shop gaming</span>
+      </div>
+      <div class="img_container">
+        <img id="img-fw" src="./assets/img_10.png" />
+        <span class="title">The sound of cheer</span>
+        <span class="subtitle">Shop Audio & Accessories</span>
+      </div>
+    </main>
+
+    <footer>
+      <div id="back-to-top" class="bg-light-dark">
+        <a class="color-white" href="#">Back to top</a>
+      </div>
+      <div id="footer-logo" class="bg-dark w-100">
+        <img src="./assets/logo.png" />
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: #fff;
+  font-weight: 700;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  --darkest-bg-color: #131921;
+  --darker-bg-color: #222f3e;
+}
+
+.logoimage {
+  background-color: var(--darkest-bg-color);
+  padding: 0.5rem;
+}
+
+.logoimage img {
+  width: 150px;
+  margin-left: 1.5rem;
+}
+
+main {
+  margin: 1rem;
+  background-color: whitesmoke;
+}
+
+header nav li {
+  display: inline-block;
+  color: #fff;
+  margin-right: 1.5rem;
+}
+
+header nav li:first-child {
+  margin-left: 1.5rem;
+}
+
+header nav {
+  background-color: var(--darker-bg-color);
+  padding: 0.5rem;
+}
+footer {
+  text-align: center;
+  background-color: var(--darkest-bg-color);
+}
+
+footer div:first-child {
+  background-color: var(--darker-bg-color);
+}
+
+footer div {
+  padding: 0.5rem;
+}
+footer img {
+  margin: 3rem;
+  width: 150px;
+}
+.firstsection {
+  background-color: #fe4c04;
+  padding: 0.3rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+.secondsection {
+  background-image: url(assets/bg-image.png);
+  height: 150px;
+  background-size: cover;
+  position: relative;
+  margin: 1rem;
+}
+
+.secondsection p {
+  position: absolute;
+  width: 100%;
+  top: 30%;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+  font-size: 2rem;
+}
+
+.secondsection p:last-child {
+  width: 100%;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+  font-size: 1rem;
+  top: 65%;
+}
+
+.thirdsection a {
+  text-decoration: none;
+  color: green;
+  padding-left: 0.4rem;
+  font-size: 0.5rem;
+}
+
+.thirdsection {
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  margin: 1rem;
+  background-color: #fff;
+}
+
+.thirdsection div {
+  margin-bottom: 1rem;
+}
+
+.flex3 {
+  display: flex;
+  justify-content: space-around;
+}
+
+.thirdsection img {
+  width: 24%;
+  border-radius: 0.5rem;
+}
+
+.fourtsection img {
+  width: 100%;
+}
+
+.fourtsection {
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  margin: 1rem;
+  background-color: #fff;
+}
+
+.fourtsection a {
+  text-decoration: none;
+  color: green;
+  padding-left: 0.4rem;
+  font-size: 0.5rem;
+}
+
+.fourtsection div {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.fifthsection img {
+  width: 100%;
+}
+
+.fifthsection {
+  padding: 0.5rem;
+  font-size: 0.7rem;
+  margin: 1rem;
+  background-color: #fff;
+}
+
+.fifthsection a {
+  text-decoration: none;
+  color: green;
+  padding-left: 0.4rem;
+  font-size: 0.5rem;
+}
+
+.fifthsection div {
+  margin-bottom: 1rem;
+  text-align: center;
+}
