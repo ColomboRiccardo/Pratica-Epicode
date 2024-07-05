@@ -1,0 +1,468 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+button {
+  font-family: inherit;
+  color: white;
+  line-height: 20px;
+  background-color: rgba(25, 25, 25, 1);
+  border-radius: 99em;
+  border: 1px solid rgba(25, 25, 25, 1);
+  padding: 7px 16px 9px;
+  transition: all 0.3s;
+  font-weight: 400;
+}
+
+.container {
+  margin-inline: 24px;
+}
+
+@media screen and (min-width: 728px) {
+  .container {
+    margin-inline: 48px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .container {
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-vertical {
+  flex-direction: column;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-baseline {
+  align-items: baseline;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  background-color: #ffc017;
+  transition: background-color 0.6s;
+}
+
+nav.scrolled {
+  background-color: white;
+}
+
+nav .menu {
+  list-style: none;
+  font-size: 0.85em;
+  margin-block: 1.125rem;
+}
+
+nav .menu li {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@media screen and (max-width: 727px) {
+  nav .menu li:not(:nth-last-child(2)):not(:last-child) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 551px) {
+  nav .menu li:nth-last-child(2) {
+    display: none;
+  }
+}
+
+nav .menu li span {
+  margin-right: 25px;
+}
+
+nav.scrolled .menu li button {
+  background-color: rgb(26, 137, 23);
+  border-color: rgb(26, 137, 23);
+}
+
+nav,
+.hero {
+  border-bottom: 1px solid rgba(25, 25, 25, 1);
+}
+
+.hero {
+  background-color: #ffc017;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero .content {
+  width: 550px;
+  padding-top: 100px;
+  padding-bottom: 105px;
+}
+
+.hero .content h1 {
+  font-size: 70px;
+  letter-spacing: -0.05em;
+
+  line-height: 1;
+  margin-block: 0;
+  font-family: "Spectral", serif;
+}
+
+@media screen and (min-width: 552px) {
+  .hero .content h1 {
+    font-size: 85px;
+    line-height: 88px;
+  }
+}
+
+@media screen and (min-width: 904px) {
+  .hero .content h1 {
+    font-size: 109px;
+    letter-spacing: -6px;
+  }
+}
+
+.hero .content h3 {
+  width: 80%;
+  font-size: 24px;
+  line-height: 1;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  margin-block: 1em;
+}
+
+.hero .content button {
+  margin-top: 1.5rem;
+  font-size: 20px;
+  padding: 0.5em 2.5em;
+}
+
+.hero .artwork {
+  position: absolute;
+  left: 500px;
+  width: 585px;
+}
+
+@media screen and (max-width: 728px) {
+  .hero .artwork {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .hero .artwork {
+    left: initial;
+    right: 0;
+  }
+}
+
+/* avatar title is reused in different components, therefore is a generic class */
+
+.avatar-title img {
+  object-fit: cover;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+
+.avatar-title h4 {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 700;
+}
+.avatar-title h4 .in {
+  color: rgba(117, 117, 117, 1);
+}
+
+/* ...same for bottom-info */
+
+.bottom-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.bottom-info span {
+  color: rgba(117, 117, 117, 1);
+  font-size: 13px;
+  line-height: 20px;
+  white-space: nowrap;
+}
+
+.bottom-info .dot {
+  padding-inline: 0.25rem;
+}
+
+.badge {
+  color: rgba(117, 117, 117, 1);
+  background-color: rgba(242, 242, 242, 1);
+  padding: 2px 8px;
+  border-radius: 100px;
+  line-height: 20px;
+  font-size: 13px;
+}
+
+section.trending {
+  padding-top: 40px;
+  padding-bottom: 16px;
+}
+
+section.trending .trending-title-section {
+  margin-bottom: 10px;
+}
+
+section.trending img[src$="trending.svg"] {
+  margin-right: 12px;
+}
+
+section.trending .trending-title {
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 1px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+section.trending .grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline: -16px;
+}
+
+section.trending > .container > .grid > .col {
+  width: 100%; /* fallback */
+  flex-basis: 100%;
+  margin-bottom: 24px;
+  padding-inline: 16px;
+}
+
+@media screen and (min-width: 728px) {
+  section.trending > .container > .grid > .col {
+    width: 50%; /* fallback */
+    flex-basis: 50%;
+    margin-bottom: 24px;
+    padding-inline: 16px;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  section.trending > .container > .grid > .col {
+    width: 33.333%; /* fallback */
+    flex-basis: 33.333%;
+    margin-bottom: 24px;
+    padding-inline: 16px;
+  }
+}
+
+section.trending .col > .flex {
+  column-gap: 20px;
+}
+
+section.trending .col .num {
+  font-size: 30px;
+  line-height: 36px;
+  color: rgba(230, 230, 230, 1);
+  font-weight: 900;
+  line-height: 1;
+}
+
+section.trending .content h2 {
+  font-weight: 900;
+  margin-block: 10px;
+}
+
+section.wall {
+  padding-top: 56px;
+  border-top: 1px solid rgba(230, 230, 230, 1);
+}
+
+section.wall .grid {
+  display: flex;
+  align-items: flex-start;
+}
+
+section.wall .grid > .col-main {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 100%;
+  width: 100%;
+  overflow-x: auto;
+}
+
+@media screen and (max-width: 903px) {
+  section.wall .grid {
+    flex-wrap: wrap;
+  }
+
+  section.wall .grid > aside {
+    order: -1;
+    width: 100%;
+    margin-block-end: 24px;
+  }
+}
+
+@media screen and (min-width: 904px) {
+  section.wall .grid {
+    column-gap: 8.333%;
+  }
+
+  section.wall .grid > .col-main {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 58.333%;
+    width: 58.333%;
+  }
+
+  section.wall .grid > aside {
+    min-height: 30px;
+    position: sticky;
+    top: 110px;
+  }
+}
+
+section.wall .grid > aside h4 {
+  font-size: 13px;
+  line-height: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+section.wall .card {
+  display: flex;
+  column-gap: 28px;
+  margin-bottom: 48px;
+}
+
+section.wall .card .content {
+  flex: 1 1 200px;
+  min-width: 200px;
+}
+
+section.wall .card .content + img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 576px) {
+  section.wall .card .content + img {
+    width: 150px;
+  }
+}
+@media screen and (min-width: 728px) {
+  section.wall .card .content + img {
+    width: 200px;
+    height: 134px;
+  }
+}
+
+section.wall .card .avatar-title {
+  padding-bottom: 8px;
+}
+
+section.wall .card h3 {
+  font-size: 22px;
+  line-height: 28px;
+  font-weight: 900;
+}
+
+section.wall .card p {
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 3px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  color: rgba(117, 117, 117, 1);
+}
+
+section.wall .card .bottom-info {
+  padding-top: 8px;
+}
+@media screen and (max-width: 575px) {
+  section.wall .card .bottom-info .badge {
+    display: none;
+  }
+}
+
+section.wall .card img[src$="star.svg"] {
+  margin-left: 0.25rem;
+}
+
+aside h4 {
+  margin-bottom: 16px;
+}
+
+aside .categories {
+  display: flex;
+  flex-wrap: wrap;
+  padding-bottom: 24px;
+}
+
+aside .categories .category {
+  font-size: 13px;
+  line-height: 20px;
+  padding: 6px 16px;
+  border: 1px solid rgba(230, 230, 230, 1);
+  color: rgba(117, 117, 117, 1);
+  letter-spacing: 0.25px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+  border-radius: 2px;
+}
+
+aside footer {
+  padding-top: 24px;
+  border-top: 1px solid rgba(230, 230, 230, 1);
+}
+aside footer ul {
+  list-style: none;
+}
+
+aside footer ul li {
+  display: inline-block;
+  margin-right: 24px;
+  margin-bottom: 8px;
+}
+aside footer li a {
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(117, 117, 117, 1);
+  text-decoration: none;
+}

@@ -1,0 +1,319 @@
+/* CSS Reset */
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+img {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+body {
+  -webkit-text-size-adjust: none;
+}
+
+button {
+  background-color: initial;
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+/* Qui iniziano gli stili nostri */
+
+a,
+button,
+h2,
+p,
+h3 {
+  font-family: "Open Sans", sans-serif;
+}
+
+img {
+  max-width: 50px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid grey;
+}
+
+.header-buttons {
+  display: flex;
+  width: 25%;
+  justify-content: space-evenly;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 900;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+button {
+  padding: 0 0.5rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+}
+
+nav,
+.main-page,
+article,
+aside,
+.twitter-section,
+.people-element {
+  display: flex;
+}
+
+.flex {
+  display: flex;
+}
+
+aside {
+  width: 30%;
+  height: 1000px;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  width: 70%;
+  height: 1000px;
+  padding: 3rem 2rem;
+  border-right: 1px solid grey;
+}
+
+nav {
+  border-bottom: 1px solid grey;
+  padding-bottom: 1rem;
+}
+
+nav .tabs {
+  margin-right: 3rem;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+article {
+  margin-top: 5rem;
+}
+.article-text {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.article-img {
+  width: 20%;
+  height: 200px;
+  background-color: black;
+}
+
+.article-label {
+  font-weight: 200;
+  display: inline-block;
+}
+
+.article-icon {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.twitter-section,
+.recommended-section,
+.people-section {
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  text-align: center;
+  justify-content: space-around;
+  padding: 2rem 0;
+  border-bottom: 1px solid grey;
+}
+
+.twitter-section > * {
+  margin: 1rem;
+}
+
+/* .twitter-section a,
+.twitter-section p,
+.twitter-section button {
+  margin: 1rem;
+} */
+
+.pills {
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.pill {
+  margin: 0.3rem;
+}
+
+.people-element {
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.people-img {
+  width: 60px;
+  height: 60px;
+  background-color: black;
+  border-radius: 50%;
+}
+
+.people-names {
+  /* flex: 1 0 auto; */
+  flex-basis: auto;
+  flex-grow: 1;
+  flex-shrink: 0;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  padding-left: 1rem;
+}
