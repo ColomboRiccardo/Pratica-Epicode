@@ -148,7 +148,9 @@ a,
 button,
 h2,
 p,
-h3 {
+h3,
+ul,
+li {
   font-family: "Open Sans", sans-serif;
 }
 
@@ -189,7 +191,7 @@ p {
 }
 
 button {
-  padding: 0 0.5rem;
+  padding: 0.5rem 0.75rem;
   border: 2px solid black;
   border-radius: 2rem;
 }
@@ -199,7 +201,11 @@ nav,
 article,
 aside,
 .twitter-section,
-.people-element {
+.people-element,
+.article-bottom,
+.article-bottom > ul,
+.article-bottom > div,
+.article-author {
   display: flex;
 }
 
@@ -252,6 +258,11 @@ article {
 .article-label {
   font-weight: 200;
   display: inline-block;
+  margin-left: 10px;
+}
+
+.article-label a {
+  font-weight: 900;
 }
 
 .article-icon {
@@ -290,8 +301,13 @@ article {
   flex-wrap: wrap;
 }
 
-.pill {
+.pills > .pill {
   margin: 0.3rem;
+}
+
+.pill {
+  border: none;
+  background-color: lightgrey;
 }
 
 .people-element {
@@ -316,4 +332,46 @@ article {
   align-items: start;
   flex-direction: column;
   padding-left: 1rem;
+}
+
+.article-bottom {
+  justify-content: space-between;
+}
+
+.article-bottom ul {
+  align-items: center;
+}
+
+.article-bottom li {
+  margin-right: 30px;
+}
+
+.article-bottom li:first-child {
+  list-style: none;
+}
+
+.article-bottom img {
+  max-width: 35px;
+}
+
+.article-bottom img:last-child {
+  margin-right: 20px;
+}
+
+.article-author {
+  align-items: center;
+}
+
+.tabs:last-child a {
+  border-bottom: 3px solid black;
+  padding: 0 8px 10px 8px;
+
+  font-weight: 900;
+}
+
+.people-names p:first-child {
+  font-weight: 700;
+}
+.people-names p:last-child {
+  font-weight: 200;
 }
