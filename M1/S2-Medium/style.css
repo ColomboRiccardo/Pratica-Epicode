@@ -1,377 +1,73 @@
+/* CSS Variables */
+
+body {
+  --dark-color: #0f172a;
+  --mid-color: #64748b;
+  --light-color: #e2e8f0;
+  --border-radius: 1rem;
+}
+
 /* CSS Reset */
 
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
+* {
   margin: 0;
   padding: 0;
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
   box-sizing: border-box;
 }
 
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section,
-img {
-  display: block;
-}
-
-body {
-  line-height: 1;
-}
-
-blockquote,
-q {
-  quotes: none;
-}
-
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: "";
-  content: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-body {
-  -webkit-text-size-adjust: none;
-}
-
 button {
-  background-color: initial;
+  background-color: inherit;
   border: none;
-  cursor: pointer;
+}
+
+/* CSS Pagina */
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 a {
-  color: black;
+  color: initial;
   text-decoration: none;
 }
 
-/* Qui iniziano gli stili nostri */
-
-a,
-button,
-h2,
-p,
-h3,
-ul,
-li {
-  font-family: "Open Sans", sans-serif;
+.icon {
+  width: 50px;
 }
 
-img {
-  max-width: 50px;
+.people-img img {
+  width: 100px;
 }
 
-.pointer {
-  cursor: pointer;
+.article-img img {
+  width: 500px;
 }
+
+/* Header */
 
 header {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid grey;
+  align-items: center;
+  padding: 0.5rem 2rem;
+  gap: 0.75rem;
+  padding-bottom: 1rem;
+  box-shadow: 0 0 1rem var(--light-color);
 }
 
-.header-buttons {
-  display: flex;
-  width: 25%;
-  justify-content: space-evenly;
+.empty {
+  flex-grow: 1;
 }
 
 h1 {
-  font-size: 3rem;
-  font-weight: 900;
+  font-size: 2.5rem;
 }
 
-h2 {
-  font-size: 2rem;
-  font-weight: 500;
-}
-
-p {
-  font-size: 1.2rem;
+.main-page {
+  display: none;
 }
 
 button {
-  padding: 0.5rem 0.75rem;
-  border: 2px solid black;
-  border-radius: 2rem;
-}
-
-nav,
-.main-page,
-article,
-aside,
-.twitter-section,
-.people-element,
-.article-bottom,
-.article-bottom > ul,
-.article-bottom > div,
-.article-author {
-  display: flex;
-}
-
-.flex {
-  display: flex;
-}
-
-aside {
-  width: 30%;
-  height: 1000px;
-  flex-direction: column;
-  align-items: center;
-}
-
-main {
-  width: 70%;
-  height: 1000px;
-  padding: 3rem 2rem;
-  border-right: 1px solid grey;
-}
-
-nav {
-  border-bottom: 1px solid grey;
-  padding-bottom: 1rem;
-}
-
-nav .tabs {
-  margin-right: 3rem;
-  text-transform: uppercase;
-  font-size: 1.3rem;
-  font-weight: 600;
-}
-
-article {
-  margin-top: 5rem;
-}
-.article-text {
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.article-img {
-  width: 20%;
-  height: 200px;
-  background-color: black;
-}
-
-.article-label {
-  font-weight: 200;
-  display: inline-block;
-  margin-left: 10px;
-}
-
-.article-label a {
-  font-weight: 900;
-}
-
-.article-icon {
-  display: inline-block;
-  width: 25px;
-  height: 25px;
-  background-color: black;
-  border-radius: 50%;
-}
-
-.twitter-section,
-.recommended-section,
-.people-section {
-  flex-direction: column;
-  align-items: center;
-  width: 90%;
-  text-align: center;
-  justify-content: space-around;
-  padding: 2rem 0;
-  border-bottom: 1px solid grey;
-}
-
-.twitter-section > * {
-  margin: 1rem;
-}
-
-/* .twitter-section a,
-.twitter-section p,
-.twitter-section button {
-  margin: 1rem;
-} */
-
-.pills {
-  margin-top: 1rem;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.pills > .pill {
-  margin: 0.3rem;
-}
-
-.pill {
-  border: none;
-  background-color: lightgrey;
-}
-
-.people-element {
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 1rem;
-}
-
-.people-img {
-  width: 60px;
-  height: 60px;
-  background-color: black;
-  border-radius: 50%;
-}
-
-.people-names {
-  /* flex: 1 0 auto; */
-  flex-basis: auto;
-  flex-grow: 1;
-  flex-shrink: 0;
-  display: flex;
-  align-items: start;
-  flex-direction: column;
-  padding-left: 1rem;
-}
-
-.article-bottom {
-  justify-content: space-between;
-}
-
-.article-bottom ul {
-  align-items: center;
-}
-
-.article-bottom li {
-  margin-right: 30px;
-}
-
-.article-bottom li:first-child {
-  list-style: none;
-}
-
-.article-bottom img {
-  max-width: 35px;
-}
-
-.article-bottom img:last-child {
-  margin-right: 20px;
-}
-
-.article-author {
-  align-items: center;
-}
-
-.tabs:last-child a {
-  border-bottom: 3px solid black;
-  padding: 0 8px 10px 8px;
-
-  font-weight: 900;
-}
-
-.people-names p:first-child {
-  font-weight: 700;
-}
-.people-names p:last-child {
-  font-weight: 200;
+  border: 2px solid var(--dark-color);
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
 }
