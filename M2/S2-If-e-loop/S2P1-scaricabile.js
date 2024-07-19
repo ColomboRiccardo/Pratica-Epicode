@@ -196,6 +196,14 @@ console.log(`Il totale è ${totalShoppingCartB}`);
 let isMale = true;
 const gender = isMale ? "male" : "female";
 
+let isMale2 = true;
+let gender2;
+if (isMale2) {
+  gender2 = "male";
+} else {
+  gender2 = "female";
+}
+
 /* ESERCIZIO EXTRA 5
   Scrivi un algoritmo che iteri i numeri da 1 a 100, stampandoli in console. 
   Se un valore tuttavia è multiplo di 3 (operatore modulo!) stampa al suo posto la parola "Fizz" 
