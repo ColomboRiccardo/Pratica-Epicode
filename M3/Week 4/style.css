@@ -1,0 +1,54 @@
+:root {
+    --black-background: #141414
+}
+
+
+
+body {
+    background-color: var(--black-background);
+}
+
+#nav-search input {
+    display: none;
+    width: 0%;
+}
+
+#nav-search:hover input,
+#nav-search input:focus-within {
+    display: block;
+
+    animation-name: slide-open;
+    animation-duration: 2s;
+}
+
+@keyframes slide-open {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+#navbarSupportedContent {
+    gap: 1rem;
+}
+
+h2 {
+    margin-left: 11px;
+}
+
+.footer-container {
+    margin-top: 120px;
+
+}
+
+.social-icon {
+    width: 32px;
+}
+
+#trending-now-carousel {
+    scrollbar-color: grey #212529;
+    scrollbar-width: thin;
+}
