@@ -1,0 +1,63 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <style>
+      body,
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      body {
+        height: 100vh;
+        background-color: whitesmoke;
+      }
+
+      .container {
+        height: 50vh;
+        width: 50%;
+        background-color: grey;
+        padding: 3rem;
+      }
+
+      #p-insert {
+        font-size: 2rem;
+        font-weight: bolder;
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Titolo della pagina</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Sequi et vel itaque aperiam voluptate,
+        voluptates nobis accusantium. Nulla quidem labore
+        blanditiis eum ratione eaque distinctio itaque
+        fugit. Hic, fuga est.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Sequi et vel itaque aperiam voluptate,
+        voluptates nobis accusantium. Nulla quidem labore
+        blanditiis eum ratione eaque distinctio itaque
+        fugit. Hic, fuga est.
+      </p>
+      <p id="p-insert"></p>
+    </div>
+    <!-- <script src="./script.js"></script> -->
+    <script>
+      const pInsert = document.querySelector("#p-insert");
+
+      pInsert.innerHTML = "Ciao, inserisco un innerHTML";
+    </script>
+  </body>
+</html>
