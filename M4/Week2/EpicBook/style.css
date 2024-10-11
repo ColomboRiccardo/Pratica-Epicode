@@ -1,0 +1,21 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.row.g-4 .col:hover {
+    transform: scale(1.2);
+}
+
+.card-buttons a {
+    font-size: 0.8rem;
+}
+
+.book-img {
+    height: 80%;
+}
+
+.bookCard {
+    display: none;
+}
