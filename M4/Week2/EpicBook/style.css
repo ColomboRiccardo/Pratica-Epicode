@@ -4,8 +4,11 @@
     padding: 0;
 }
 
-.row.g-4 .col:hover {
-    transform: scale(1.2);
+.row.g-4 .col-3:hover {
+    transform: scale(1.03);
+    transition: 0.3s;
+    transition-timing-function: ease-out;
+
 }
 
 .card-buttons a {

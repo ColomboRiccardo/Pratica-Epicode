@@ -56,7 +56,7 @@ function fetchBook() {
 }
 
 function createBookCard(book) {
-  const { category, price, title, img } = book;
+  const { category, price, title, img, asin } = book;
   const targetBookCard = bookCard.cloneNode(true);
   targetBookCard.style.display = "block";
   targetBookCard.querySelector(".card-title").innerHTML =
@@ -72,24 +72,38 @@ function createBookCard(book) {
     .addEventListener("click", callbackAddBookToCart);
   bookList.appendChild(targetBookCard);
 
-  function callbackAddBookToCart(e) {
-    console.log(e);
-    e.preventDefault();
-    e.target.classList.remove("btn-primary");
-    e.target.classList.add("btn-secondary", "disabled");
-    e.target.innerHTML = "Aggiunto al carrello";
+  targetBookCard
+    .querySelector(".salta-button")
+    .addEventListener("click", function (event) {
+      const bookCard =
+        event.target.parentElement.parentElement
+          .parentElement.parentElement;
+
+      console.log(bookCard);
+      bookList.removeChild(bookCard);
+    });
+
+  targetBookCard.querySelector(".dettagli-button").href =
+    "./Dettagli/dettagli.html?q=" + asin;
+
+  function callbackAddBookToCart(event) {
+    console.log("event", event);
+    event.preventDefault();
+    event.target.classList.remove("btn-primary");
+    event.target.classList.add("btn-secondary", "disabled");
+    event.target.innerHTML = "Aggiunto al carrello";
     addBookToCart(book);
   }
 }
 
 function addBookToCart({ category, price, title, img }) {
-  console.log(category, price, title);
+  //console.log(category, price, title);
   cartArray.push({ title, price });
   const li = document.createElement("li");
   const span = document.createElement("span");
   span.classList.add("dropdown-item");
   li.appendChild(span);
-  span.innerHTML = title + " " + price;
+  span.innerHTML = title + " - " + price;
   yourCart.after(li);
 }
 
