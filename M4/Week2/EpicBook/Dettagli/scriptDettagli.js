@@ -19,6 +19,7 @@ console.log("location", window.location);
 
 const params = new URLSearchParams(window.location.search);
 const query = params.get("q");
+const prezzo = params.get("prezzo");
 
 function fetchBook() {
   fetch(BACKEND_ADDRESS + "/" + query, { headers: {} })
@@ -37,11 +38,23 @@ function fetchBook() {
       imageSection.width = 400;
       const loremSection = document.createElement("p");
       loremSection.innerHTML = LOREM_IPSUM;
-      bookDetails.appendChild(imageSection);
-      bookDetails.appendChild(categoryParagraph);
-      bookDetails.appendChild(priceParagraph);
-      bookDetails.appendChild(loremSection);
+      // bookDetails.appendChild(imageSection);
+      // bookDetails.appendChild(categoryParagraph);
+      // bookDetails.appendChild(priceParagraph);
+      // bookDetails.appendChild(loremSection);
+      utilityAppendList(bookDetails, [
+        imageSection,
+        categoryParagraph,
+        priceParagraph,
+        loremSection,
+      ]);
     });
+}
+
+function utilityAppendList(target, childList) {
+  childList.forEach(function (child) {
+    target.appendChild(child);
+  });
 }
 
 window.onload = fetchBook;
