@@ -1,5 +1,5 @@
 const DATABASE_KEY =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzE3ZGYxOWFjM2I4NzAwMTVjNzJmN2IiLCJpYXQiOjE3Mjk2MTc2ODksImV4cCI6MTczMDgyNzI4OX0.g4pM6-wW-0cqKgRkyPUECH3JrNcErYgq_XoI42Hw0UY";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NzE3ZGYxOWFjM2I4NzAwMTVjNzJmN2IiLCJpYXQiOjE3MzA5MTY5NjAsImV4cCI6MTczMjEyNjU2MH0.gcQeLWkVjjiMdNuwoulGiUg8SzA8MovgFQsE-kdTbqQ";
 const DATABASE_AUTH = "Bearer " + DATABASE_KEY;
 const DATABASE_URL =
   "https://striveschool-api.herokuapp.com/api/product/";
