@@ -1,0 +1,10 @@
+.Searchbar {
+    display: flex;
+}
+
+.SearchLabel {
+    visibility: hidden;
+    height: 0px;
+    margin: 0;
+    display: none
+}

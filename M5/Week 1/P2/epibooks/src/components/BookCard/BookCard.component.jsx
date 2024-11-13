@@ -5,24 +5,17 @@ import Col from "react-bootstrap/Col";
 //style imports
 import "./BookCard.style.css";
 
-const BookCard = (props) => {
-  const { title, image, bgColor, col } = props;
+const BookCard = ({ title, image, col }) => {
+  //const { title, image, col, props } = props;
   return (
-    <>
-      <style>{`
-        .BookCard{
-        background-color:${bgColor}
-        }
-        `}</style>
-      <Col md={col}>
-        <Card className="BookCard">
-          <Card.Img variant="top" src={image} />
-          <Card.Body>
-            <Card.Title>{title}</Card.Title>
-          </Card.Body>
-        </Card>
-      </Col>
-    </>
+    <Col className="BookContainer" md={col}>
+      <Card className="BookCard">
+        <Card.Img variant="top" src={image} />
+        <Card.Body className="CardBody">
+          <Card.Title>{title}</Card.Title>
+        </Card.Body>
+      </Card>
+    </Col>
   );
 };
 
