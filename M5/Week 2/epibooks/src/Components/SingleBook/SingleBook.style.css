@@ -1,0 +1,23 @@
+.SingleBook img {
+    height: 500px;
+    object-fit: cover;
+}
+
+.SingleBook {
+    border: 1px solid gainsboro
+}
+
+.card-body {
+    height: 80px;
+    display: flex;
+    align-items: center;
+}
+
+.Card-Container:has(.SingleBook.selected) {
+    border: 2px solid red;
+}
+
+.Card-Container {
+    border: 2px solid gainsboro;
+    border-radius: 0.375rem;
+}

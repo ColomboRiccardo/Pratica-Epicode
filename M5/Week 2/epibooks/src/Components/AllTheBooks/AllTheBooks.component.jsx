@@ -24,11 +24,14 @@ import {
 
 const AllTheBooks = () => {
   const [bookList, setBookList] = useState(bookStore);
+  const [idSelected, setIdSelected] = useState(0);
 
   const handleChange = (event) => {
     //console.log(event.target.value);
     const filterResult = bookStore.filter((book) =>
-      book.title.toLowerCase().includes(event.target.value)
+      book.title
+        .toLowerCase()
+        .includes(event.target.value.toLowerCase())
     );
     setBookList(filterResult);
   };
@@ -61,8 +64,12 @@ const AllTheBooks = () => {
       </Row>
 
       <Row className="g-2">
-        {bookList.map((book) => (
-          <SingleBook book={book} color="green" />
+        {bookList.map((book, index) => (
+          <SingleBook
+            book={book}
+            id={index + 1}
+            key={"book " + index}
+          />
         ))}
       </Row>
     </Container>
