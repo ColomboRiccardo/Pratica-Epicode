@@ -1,30 +1,31 @@
 import React from "react";
 
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 
 const CommentList = (props) => {
-  const DEFAULTPROPS = {
-    comment:
-      "Ottimo libro, lo rileggerei subito, ma non lo ho ancora letto",
-    rate: "4",
-    elementId: "0000",
-  };
-
-  const {
-    comment = DEFAULTPROPS.comment,
-    rate = DEFAULTPROPS.rate,
-    elementId = DEFAULTPROPS.elementId,
-  } = props;
+  const { comment, author, rate } = props.commentObj;
   return (
     <Card className="m-2">
-      <Card.Header as="h5">{rate}/5</Card.Header>
+      <Card.Header as="h6">{rate}/5</Card.Header>
       <Card.Body className="d-flex flex-column align-items-start h-auto">
-        <Card.Title>{elementId} - Carla Maria</Card.Title>
-        <Card.Text>{comment}</Card.Text>
+        <Card.Text className="small">
+          <span className="fw-bold">{author}</span>
+          {": " + comment}
+        </Card.Text>
       </Card.Body>
     </Card>
   );
 };
 
 export default CommentList;
+
+// {
+//   "_id": "66c7590343a56800158ec487",
+//   "comment": "ciao prof , aggiorno il commentokkk",
+//   "rate": 1,
+//   "elementId": "1940026091",
+//   "author": "tghtr",
+//   "createdAt": "2024-08-22T15:28:03.491Z",
+//   "updatedAt": "2024-09-27T16:52:59.230Z",
+//   "__v": 0
+// }

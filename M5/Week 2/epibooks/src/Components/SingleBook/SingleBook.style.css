@@ -21,3 +21,20 @@
     border: 2px solid gainsboro;
     border-radius: 0.375rem;
 }
+
+.comment-area {
+    animation-name: expansion;
+    animation-duration: 2s;
+    overflow-y: scroll;
+    max-height: 580px;
+}
+
+@keyframes expansion {
+    0% {
+        width: 30%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}

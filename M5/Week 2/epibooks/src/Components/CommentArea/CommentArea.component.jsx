@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
+
+//component imports
 import CommentList from "../CommentList/CommentList.component";
+import AddComment from "../AddComment/AddComment.component";
 
 //link imports
 import {
@@ -11,11 +14,13 @@ import {
 
 //const API_KEY = process.env.APIKEY;
 
-const CommentArea = () => {
-  //console.log(API_KEY);
+const modifyUrl = (asin) => {
+  return GET_COMMENT_URL.replace(":asin", asin);
+};
 
+const CommentArea = ({ asin }) => {
   const fetchData = async () => {
-    const response = await fetch(GET_COMMENT_URL, {
+    const response = await fetch(modifyUrl(asin), {
       headers: {
         Authorization: API_KEY,
       },
@@ -24,34 +29,23 @@ const CommentArea = () => {
     setCommentList(data);
   };
 
-  const postData = async () => {
-    const response = await fetch(POST_COMMENT_URL, {
-      headers: {
-        Authorization: API_KEY,
-      },
-      method: "POST",
-      body: JSON.stringify({
-        comment:
-          "Ottimo libro, lo rileggerei subito, ma non lo ho ancora letto",
-        rate: "4",
-        elementId: "0000",
-      }),
-    });
-  };
-
   const [commentList, setCommentList] = useState([]);
 
   useEffect(() => {
-    postData();
     fetchData();
-    console.log(commentList);
   }, []);
 
   return (
-    <>
-      <h3 className="m-2">Recensioni</h3>
-      <CommentList />
-    </>
+    <div className="comment-area">
+      <h3 className="m-2">Recensioni {asin}</h3>
+      {commentList.map((commentObj, index) => (
+        <CommentList
+          commentObj={commentObj}
+          key={commentObj._id + index}
+        />
+      ))}
+      <AddComment asin={asin} fetchData={fetchData} />
+    </div>
   );
 };
 

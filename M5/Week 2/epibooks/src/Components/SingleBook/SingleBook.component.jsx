@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext } from "react";
 
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
@@ -11,20 +11,39 @@ import CommentArea from "../CommentArea/CommentArea.component";
 //style imports
 import "./SingleBook.style.css";
 
+//context import
+import { IdSelectedContext } from "../../Contexts/context";
+
 const SingleBook = (props) => {
-  const [selected, setSelected] = useState(false);
+  const { idSelected, setIdSelected } = useContext(
+    IdSelectedContext
+  );
+
+  const isSelected = () => {
+    return idSelected === props.asin;
+  };
+
+  const handleClick = () => {
+    if (isSelected()) {
+      setIdSelected(0);
+    } else {
+      setIdSelected(props.asin);
+    }
+  };
 
   //const { book } = props;
   return (
-    <Col sm={selected ? 6 : 3}>
+    <Col sm={isSelected() ? 12 : 3}>
       <Container className="Card-Container">
         <Row>
           <Col className="p-0">
             <Card
               className={`SingleBook ${
-                selected ? "selected" : ""
+                isSelected() && "selected"
               }`}
-              onClick={() => setSelected(!selected)}
+              onClick={() => {
+                handleClick();
+              }}
             >
               <Card.Img
                 variant="top"
@@ -36,9 +55,12 @@ const SingleBook = (props) => {
             </Card>
           </Col>
           <Col
-            className={`${selected ? "" : "d-none"} p-0`}
+            className={`${!isSelected() && "d-none"} p-0`}
+            sm={9}
           >
-            {selected && <CommentArea />}
+            {isSelected() && (
+              <CommentArea asin={props.asin} />
+            )}
           </Col>
         </Row>
       </Container>
