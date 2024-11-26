@@ -19,7 +19,7 @@ import {
 function App() {
   const [bookList, setBookList] = useState(bookStore);
   const [theme, setTheme] = useState("dark");
-  const [idSelected, setIdSelected] = useState(0);
+  const [idSelected, setIdSelected] = useState(1234567890);
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");

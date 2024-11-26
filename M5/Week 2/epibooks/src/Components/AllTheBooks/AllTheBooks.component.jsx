@@ -21,11 +21,16 @@ import {
 import {
   ThemeContext,
   BookContext,
+  IdSelectedContext,
 } from "../../Contexts/context";
+import CommentArea from "../CommentArea/CommentArea.component";
 
 const AllTheBooks = () => {
   const theme = useContext(ThemeContext);
   const { bookList } = useContext(BookContext);
+  const { idSelected, setIdSelected } = useContext(
+    IdSelectedContext
+  );
 
   return (
     <Container data-bs-theme={theme}>
@@ -36,9 +41,24 @@ const AllTheBooks = () => {
       </Row>
 
       <Row className="g-2">
-        {bookList.map(({ asin, ...book }) => (
-          <SingleBook book={book} asin={asin} key={asin} />
-        ))}
+        <Col sm={9}>
+          <Row className="g-2">
+            {bookList.map(({ asin, ...book }) => (
+              <SingleBook
+                book={book}
+                asin={asin}
+                key={asin}
+              />
+            ))}
+          </Row>
+        </Col>
+        <Col sm={3}>
+          <Container fluid>
+            <Row>
+              <CommentArea asin={idSelected} />
+            </Row>
+          </Container>
+        </Col>
       </Row>
     </Container>
   );

@@ -25,7 +25,7 @@ const SingleBook = (props) => {
 
   const handleClick = () => {
     if (isSelected()) {
-      setIdSelected(0);
+      setIdSelected(1234567890);
     } else {
       setIdSelected(props.asin);
     }
@@ -33,7 +33,7 @@ const SingleBook = (props) => {
 
   //const { book } = props;
   return (
-    <Col sm={isSelected() ? 12 : 3}>
+    <Col sm={4}>
       <Container className="Card-Container">
         <Row>
           <Col className="p-0">
@@ -53,14 +53,6 @@ const SingleBook = (props) => {
                 <Card.Text>{props.book.title}</Card.Text>
               </Card.Body>
             </Card>
-          </Col>
-          <Col
-            className={`${!isSelected() && "d-none"} p-0`}
-            sm={9}
-          >
-            {isSelected() && (
-              <CommentArea asin={props.asin} />
-            )}
           </Col>
         </Row>
       </Container>

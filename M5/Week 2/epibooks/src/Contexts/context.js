@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-export const IdSelectedContext = createContext(0);
-export const ThemeContext = createContext("dark");
+export const IdSelectedContext = createContext();
+export const ThemeContext = createContext();
 export const BookContext = createContext();

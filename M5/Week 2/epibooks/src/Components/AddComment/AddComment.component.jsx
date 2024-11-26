@@ -70,7 +70,7 @@ const [inputObj, setInputObj] = useState({});
       <Form onSubmit={(e) => handleSubmit(e)}>
         <Container>
           <Row className="my-1 g-1">
-            <Col sm={7}>
+            <Col sm={12}>
               <Form.Control
                 type="text"
                 placeholder="Cosa ne pensi di questo libro?"
@@ -79,7 +79,7 @@ const [inputObj, setInputObj] = useState({});
               />
             </Col>
 
-            <Col sm={2}>
+            <Col sm={12}>
               <Form.Control
                 type="text"
                 placeholder="Rating (1-5)"
@@ -87,7 +87,7 @@ const [inputObj, setInputObj] = useState({});
                 value={rating}
               />
             </Col>
-            <Col sm={3}>
+            <Col sm={12}>
               <Button type="submit">
                 Aggiungi Commento
               </Button>
