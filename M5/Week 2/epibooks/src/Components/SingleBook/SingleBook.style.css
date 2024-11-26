@@ -1,6 +1,7 @@
 .SingleBook img {
     height: 500px;
     object-fit: cover;
+    position: relative
 }
 
 .SingleBook {
@@ -14,7 +15,7 @@
 }
 
 .Card-Container:has(.SingleBook.selected) {
-    border: 2px solid red;
+    border: 2px solid rgb(13, 110, 253);
 }
 
 .Card-Container {
@@ -29,11 +30,6 @@
     max-height: 580px;
 } */
 
-.comment-area {
-    border: 2px solid gainsboro;
-    border-radius: 0.375rem;
-}
-
 @keyframes expansion {
     0% {
         width: 30%;
@@ -42,4 +38,23 @@
     100% {
         width: 100%;
     }
+}
+
+.card-button {
+    visibility: hidden;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    left: 0;
+
+}
+
+.SingleBook:hover img {
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.SingleBook:hover .card-button {
+    visibility: visible;
+    transition: 0.5s;
 }

@@ -1,9 +1,11 @@
 import { useContext } from "react";
+import { Link } from "react-router";
 
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Row from "react-bootstrap/esm/Row";
 import Container from "react-bootstrap/esm/Container";
+import Button from "react-bootstrap/Button";
 
 //component imports
 import CommentArea from "../CommentArea/CommentArea.component";
@@ -49,6 +51,11 @@ const SingleBook = (props) => {
                 variant="top"
                 src={props.book.img}
               />
+              <Button info className="card-button">
+                <Link to={`/book/${props.asin}`}>
+                  Vai al libro
+                </Link>
+              </Button>
               <Card.Body>
                 <Card.Text>{props.book.title}</Card.Text>
               </Card.Body>

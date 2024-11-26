@@ -53,8 +53,11 @@ const AllTheBooks = () => {
           </Row>
         </Col>
         <Col sm={3}>
-          <Container fluid>
-            <Row>
+          <Container className="h-100" fluid>
+            <Row
+              className="sticky-top"
+              style={{ top: "12px" }}
+            >
               <CommentArea asin={idSelected} />
             </Row>
           </Container>

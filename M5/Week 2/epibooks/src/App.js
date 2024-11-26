@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router";
 
 //component imports
-import AllTheBooks from "./Components/AllTheBooks/AllTheBooks.component";
+
 import MyFooter from "./Components/MyFooter/MyFooter.component";
 import MyNav from "./Components/MyNav/MyNav.component";
 import Welcome from "./Components/Welcome/Welcome.component";
@@ -15,6 +16,9 @@ import {
   ThemeContext,
   IdSelectedContext,
 } from "./Contexts/context";
+import Homepage from "./Pages/Homepage/Homepage.page";
+import NotFound from "./Pages/NotFound/NotFound.page";
+import BookDetails from "./Pages/BookDetails/BookDetails.page";
 
 function App() {
   const [bookList, setBookList] = useState(bookStore);
@@ -26,25 +30,39 @@ function App() {
   };
 
   return (
-    <IdSelectedContext.Provider
-      value={{ idSelected, setIdSelected }}
-    >
-      <BookContext.Provider
-        value={{ bookList, setBookList }}
+    <BrowserRouter>
+      <IdSelectedContext.Provider
+        value={{ idSelected, setIdSelected }}
       >
-        <ThemeContext.Provider value={theme}>
-          <div
-            className={`App ${theme}`}
-            data-bs-theme={theme}
-          >
-            <MyNav toggleTheme={toggleTheme} />
-            <Welcome />
-            <AllTheBooks />
-            <MyFooter />
-          </div>
-        </ThemeContext.Provider>
-      </BookContext.Provider>
-    </IdSelectedContext.Provider>
+        <BookContext.Provider
+          value={{ bookList, setBookList }}
+        >
+          <ThemeContext.Provider value={theme}>
+            <div
+              className={`App ${theme}`}
+              data-bs-theme={theme}
+            >
+              <MyNav toggleTheme={toggleTheme} />
+
+              <Routes>
+                <Route path="/" element={<Homepage />} />
+                <Route
+                  path="/login"
+                  element={<Welcome />}
+                />
+                <Route
+                  path="/book/:asin"
+                  element={<BookDetails />}
+                />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+
+              <MyFooter />
+            </div>
+          </ThemeContext.Provider>
+        </BookContext.Provider>
+      </IdSelectedContext.Provider>
+    </BrowserRouter>
   );
 }
 
