@@ -12,25 +12,18 @@ import "./AllTheBooks.style.css";
 import SingleBook from "../SingleBook/SingleBook.component";
 
 //utils imports
-import {
-  capitalize,
-  allUpperCase,
-} from "../../utils/utils";
+import { allUpperCase } from "../../utils/utils";
 
 //context import
 import {
   ThemeContext,
   BookContext,
-  IdSelectedContext,
 } from "../../Contexts/context";
 import CommentArea from "../CommentArea/CommentArea.component";
 
 const AllTheBooks = () => {
   const theme = useContext(ThemeContext);
   const { bookList } = useContext(BookContext);
-  const { idSelected, setIdSelected } = useContext(
-    IdSelectedContext
-  );
 
   return (
     <Container data-bs-theme={theme}>
@@ -58,7 +51,7 @@ const AllTheBooks = () => {
               className="sticky-top"
               style={{ top: "12px" }}
             >
-              <CommentArea asin={idSelected} />
+              <CommentArea />
             </Row>
           </Container>
         </Col>

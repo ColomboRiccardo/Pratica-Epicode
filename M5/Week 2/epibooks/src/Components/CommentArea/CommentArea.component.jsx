@@ -12,12 +12,14 @@ import DefaultComment from "../DefaultComment/DefaultComment.component";
 //link imports
 import {
   GET_COMMENT_URL,
-  POST_COMMENT_URL,
-  PUT_COMMENT_URL,
   API_KEY,
 } from "../../utils/constants";
+import { findBookTitle } from "../../utils/utils";
 
-import { BookContext } from "../../Contexts/context";
+import {
+  BookContext,
+  AsinSelectedContext,
+} from "../../Contexts/context";
 
 //const API_KEY = process.env.APIKEY;
 
@@ -25,39 +27,26 @@ const modifyUrl = (asin) => {
   return GET_COMMENT_URL.replace(":asin", asin);
 };
 
-const CommentArea = ({ asin }) => {
+const CommentArea = () => {
+  const { asinSelected } = useContext(AsinSelectedContext);
+  const { bookList } = useContext(BookContext);
+
   const [commentList, setCommentList] = useState([]);
 
   useEffect(() => {
-    !isFresh() && fetchData();
-  }, [asin]);
-
-  const { bookList } = useContext(BookContext);
-  const CommentContent = () => {
-    return (
-      <>
-        {commentList.map((commentObj, index) => (
-          <CommentList
-            commentObj={commentObj}
-            key={commentObj._id + index}
-          />
-        ))}
-        <AddComment asin={asin} fetchData={fetchData} />
-      </>
-    );
-  };
-
-  const isFresh = () => {
-    return asin === 1234567890;
-  };
+    !!asinSelected && fetchData();
+  }, [asinSelected]);
 
   const fetchData = async () => {
     try {
-      const response = await fetch(modifyUrl(asin), {
-        headers: {
-          Authorization: API_KEY,
-        },
-      });
+      const response = await fetch(
+        modifyUrl(asinSelected),
+        {
+          headers: {
+            Authorization: API_KEY,
+          },
+        }
+      );
       const data = await response.json();
       setCommentList(data);
     } catch (error) {
@@ -65,21 +54,30 @@ const CommentArea = ({ asin }) => {
     }
   };
 
-  const bookTitle = () => {
-    if (isFresh()) return "";
-    const book = bookList.find((el) => el.asin === asin);
-    return book?.title;
-  };
-
   return (
     <div className="comment-area p-1">
       <h3 className="m-2">
-        Recensioni di
+        Recensioni di:
         <span className="h5 d-block text-primary">
-          {bookTitle()}
+          {findBookTitle(asinSelected, bookList)}
         </span>
       </h3>
-      {isFresh() ? <DefaultComment /> : <CommentContent />}
+      {!asinSelected ? (
+        <DefaultComment />
+      ) : (
+        <>
+          {commentList.map((commentObj, index) => (
+            <CommentList
+              commentObj={commentObj}
+              key={commentObj._id + index}
+            />
+          ))}
+          <AddComment
+            asin={asinSelected}
+            fetchData={fetchData}
+          />
+        </>
+      )}
     </div>
   );
 };

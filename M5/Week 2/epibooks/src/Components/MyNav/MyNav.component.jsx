@@ -20,6 +20,8 @@ import {
   BookContext,
 } from "../../Contexts/context";
 
+import { Link } from "react-router";
+
 const MyNav = ({ toggleTheme }) => {
   const [checked, setChecked] = useState(false);
 
@@ -47,9 +49,11 @@ const MyNav = ({ toggleTheme }) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto d-flex gap-2">
-            <Nav.Link href="#">Home</Nav.Link>
-            <Nav.Link href="#">About</Nav.Link>
-            <Nav.Link href="#">Browse</Nav.Link>
+            <Nav.Link>
+              <Link to="/">Home</Link>
+            </Nav.Link>
+            <Nav.Link>About</Nav.Link>
+            <Nav.Link>Browse</Nav.Link>
             <ButtonGroup>
               <ToggleButton
                 id="toggle-check"

@@ -7,29 +7,22 @@ import Row from "react-bootstrap/esm/Row";
 import Container from "react-bootstrap/esm/Container";
 import Button from "react-bootstrap/Button";
 
-//component imports
-import CommentArea from "../CommentArea/CommentArea.component";
-
 //style imports
 import "./SingleBook.style.css";
 
 //context import
-import { IdSelectedContext } from "../../Contexts/context";
+import { AsinSelectedContext } from "../../Contexts/context";
 
 const SingleBook = (props) => {
-  const { idSelected, setIdSelected } = useContext(
-    IdSelectedContext
+  const { asinSelected, setAsinSelected } = useContext(
+    AsinSelectedContext
   );
 
-  const isSelected = () => {
-    return idSelected === props.asin;
-  };
-
   const handleClick = () => {
-    if (isSelected()) {
-      setIdSelected(1234567890);
+    if (asinSelected === props.asin) {
+      setAsinSelected(null);
     } else {
-      setIdSelected(props.asin);
+      setAsinSelected(props.asin);
     }
   };
 
@@ -41,7 +34,7 @@ const SingleBook = (props) => {
           <Col className="p-0">
             <Card
               className={`SingleBook ${
-                isSelected() && "selected"
+                asinSelected === props.asin && "selected"
               }`}
               onClick={() => {
                 handleClick();

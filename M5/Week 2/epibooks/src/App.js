@@ -14,7 +14,7 @@ import bookStore from "./assets/scifi.json";
 import {
   BookContext,
   ThemeContext,
-  IdSelectedContext,
+  AsinSelectedContext,
 } from "./Contexts/context";
 import Homepage from "./Pages/Homepage/Homepage.page";
 import NotFound from "./Pages/NotFound/NotFound.page";
@@ -23,7 +23,7 @@ import BookDetails from "./Pages/BookDetails/BookDetails.page";
 function App() {
   const [bookList, setBookList] = useState(bookStore);
   const [theme, setTheme] = useState("dark");
-  const [idSelected, setIdSelected] = useState(1234567890);
+  const [asinSelected, setAsinSelected] = useState(null);
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -31,8 +31,8 @@ function App() {
 
   return (
     <BrowserRouter>
-      <IdSelectedContext.Provider
-        value={{ idSelected, setIdSelected }}
+      <AsinSelectedContext.Provider
+        value={{ asinSelected, setAsinSelected }}
       >
         <BookContext.Provider
           value={{ bookList, setBookList }}
@@ -46,10 +46,7 @@ function App() {
 
               <Routes>
                 <Route path="/" element={<Homepage />} />
-                <Route
-                  path="/login"
-                  element={<Welcome />}
-                />
+
                 <Route
                   path="/book/:asin"
                   element={<BookDetails />}
@@ -61,7 +58,7 @@ function App() {
             </div>
           </ThemeContext.Provider>
         </BookContext.Provider>
-      </IdSelectedContext.Provider>
+      </AsinSelectedContext.Provider>
     </BrowserRouter>
   );
 }
