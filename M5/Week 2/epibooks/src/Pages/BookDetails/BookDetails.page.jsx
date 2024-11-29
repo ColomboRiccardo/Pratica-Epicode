@@ -3,8 +3,8 @@ import { useNavigate, useParams } from "react-router";
 
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/esm/Row";
-import Container from "react-bootstrap/esm/Container";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 
 //context import
 import { BookContext } from "../../Contexts/context";
@@ -24,7 +24,7 @@ const BookDetails = () => {
     if (!currentBook) {
       navigate("/404");
     }
-  }, [currentBook]);
+  }, [currentBook, navigate]);
 
   return (
     <Container className="vh-100 d-flex align-items-center justify-content-center">

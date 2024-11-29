@@ -3,8 +3,8 @@ import { Link } from "react-router";
 
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
-import Row from "react-bootstrap/esm/Row";
-import Container from "react-bootstrap/esm/Container";
+import Row from "react-bootstrap/Row";
+import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
 //style imports
@@ -29,7 +29,10 @@ const SingleBook = (props) => {
   //const { book } = props;
   return (
     <Col sm={4}>
-      <Container className="Card-Container">
+      <Container
+        className="Card-Container"
+        data-testid="SingleBook"
+      >
         <Row>
           <Col className="p-0">
             <Card

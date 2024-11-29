@@ -6,7 +6,7 @@ import Col from "react-bootstrap/Col";
 
 const Welcome = () => {
   return (
-    <Container>
+    <Container data-testid="welcome">
       <Row>
         <Col>
           <h1>Benvenuti in EpiBooks</h1>
