@@ -1,0 +1,82 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Benvenuto nella mia pagina profilo</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Qui voluptates magnam non corporis dolorum?
+        Fuga nihil autem culpa laudantium, facilis nam nobis
+        magni deserunt nulla rerum iste nostrum at impedit?
+      </p>
+      <a href="./index.html">Home</a>
+      <form id="form">
+        <input
+          type="text"
+          name="useremail"
+          placeholder="Inserisci la tua email"
+        />
+        <input
+          type="text"
+          name="password"
+          placeholder="Inserisci la password per avere i nomi"
+        />
+        <button type="submit">Invia</button>
+      </form>
+      <div class="secret-user-name"></div>
+    </div>
+    <script>
+      const form = document.getElementById("form");
+      const secretUserName = document.querySelector(
+        ".secret-user-name"
+      );
+
+      const formCallback = async (event) => {
+        try {
+          event.preventDefault();
+          const formData = new FormData(form);
+          const password = formData.get("password");
+          const useremail = formData.get("useremail");
+
+          //const input = document.getElementById("password");
+          //const password = input.value;
+
+          const response = await fetch(
+            "http://localhost:3001/usernames",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify({ password, useremail }),
+            }
+          );
+          if (response.status !== 200) {
+            throw new Error(
+              "error " + JSON.stringify(response.body)
+            );
+          }
+          const data = await response.json();
+
+          data.forEach((element) => {
+            const p = document.createElement("p");
+            p.innerText =
+              element.nome + " " + element.cognome;
+            secretUserName.appendChild(p);
+          });
+        } catch (error) {
+          console.log(error);
+          alert(error);
+        }
+      };
+      form.addEventListener("submit", formCallback);
+    </script>
+  </body>
+</html>

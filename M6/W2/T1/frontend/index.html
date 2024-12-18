@@ -1,0 +1,57 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Benvenuto nel mio bellissimo sito</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Tempora mollitia ipsum quae porro. Distinctio
+        obcaecati laborum nobis officiis nostrum, provident
+        maiores explicabo vero iste quibusdam voluptatem
+        totam amet ea aut.
+      </p>
+      <a href="./profile.html">Profilo</a>
+      <ul class="user-container"></ul>
+    </div>
+    <script>
+      const container = document.querySelector(
+        ".user-container"
+      );
+
+      const fetchUsers = async () => {
+        try {
+          const response = await fetch(
+            "http://localhost:3001/users"
+          );
+          const data = await response.json();
+
+          data.forEach((user) => {
+            createUser(user);
+          });
+        } catch (error) {
+          console.error("Error fetching users:", error);
+        }
+      };
+
+      const createUser = (user) => {
+        // const userName = document.createElement("h2");
+        // userName.innerText = user.nome + " " + user.cognome;
+        const userEmail = document.createElement("h3");
+        userEmail.innerText = user.email;
+        const li = document.createElement("li");
+        //li.appendChild(userName);
+        li.appendChild(userEmail);
+        container.appendChild(li);
+      };
+
+      fetchUsers();
+    </script>
+  </body>
+</html>

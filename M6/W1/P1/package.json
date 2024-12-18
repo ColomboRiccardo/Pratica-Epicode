@@ -1,0 +1,19 @@
+{
+  "name": "pratica-1",
+  "version": "1.0.0",
+  "description": "questa è la pratica 1 di week 1 m6",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.7"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Il nostro primo sito dinamico</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Benvenuto nel nostro primo sito* dinamico</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing
+        elit. Adipisci similique beatae temporibus ad nobis
+        mollitia perspiciatis repellat ex. Dolore, animi
+        autem asperiores voluptate perferendis odio
+        temporibus illum commodi ipsa sint?
+      </p>
+      <div id="users"></div>
+    </div>
+  </body>
+  <script>
+    const usersDiv = document.getElementById("users");
+    const fillUsers = async () => {
+      const users = await fetch("/users");
+      const usersData = await users.json();
+      usersData.forEach((user) => {
+        usersDiv.appendChild(userCard(user));
+      });
+    };
+
+    const userCard = (user) => {
+      const { nome, cognome, email, data_di_nascita } =
+        user;
+      const card = document.createElement("div");
+      card.className = "card";
+      card.innerHTML = `<h3>${nome} ${cognome}</h3>
+<p>${email}</p>
+<p>${data_di_nascita}</p>`;
+      return card;
+    };
+
+    fillUsers();
+  </script>
+</html>
