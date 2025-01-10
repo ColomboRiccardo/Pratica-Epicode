@@ -1,13 +1,13 @@
 import express from "express";
 import mongoose from "mongoose";
 import cors from "cors";
-import { error } from "console";
 
 const server = express();
 server.use(express.json());
 server.use(cors());
+mongoose.set("debug", true);
 
-const databaseUri = "mongodb://localhost:27017/local";
+const databaseUri = "mongodb://127.0.0.1:27017/local";
 
 const connectDatabase = async () => {
   try {

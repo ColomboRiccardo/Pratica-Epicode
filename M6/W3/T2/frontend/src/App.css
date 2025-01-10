@@ -1,0 +1,27 @@
+.App {
+  width: 70%;
+  margin: 0 auto;
+  height: 100vh;
+  margin-top: 3rem
+}
+
+nav {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  margin-top: 2rem
+}
+
+nav a {
+  margin-right: 2rem
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+form input {
+  margin-bottom: 1rem
+}
