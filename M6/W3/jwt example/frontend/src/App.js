@@ -11,13 +11,17 @@ import Public from "./components/Public";
 
 function App() {
   const [token, setToken] = useState(null);
-  const [tokenValid, setTokenValid] = useState(false);
+  const [tokenValid, setTokenValid] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     setTokenValid(isAuthenticated());
   }, [token]);
 
   useEffect(() => {
+    setIsLoggedIn(
+      window.localStorage.getItem("isLoggedIn")
+    );
     const token = localStorage.getItem("token");
     if (token) {
       setToken(token);
@@ -37,16 +41,18 @@ function App() {
           <Route path="/" element={<Public />} />
           <Route
             path="/login"
-            element={<Login setToken={setToken} />}
+            element={
+              <Login
+                setIsLoggedIn={setIsLoggedIn}
+                setToken={setToken}
+              />
+            }
           />
           <Route
             path="/protected"
             element={
-              tokenValid ? (
-                <Protected setToken={setToken} />
-              ) : (
-                <Denied />
-              )
+              // tokenValid ? <Protected /> : <Denied />
+              isLoggedIn ? <Protected /> : <Denied />
             }
           />
         </Routes>

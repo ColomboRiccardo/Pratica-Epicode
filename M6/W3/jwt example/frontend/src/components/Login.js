@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router";
 
-function Login({ setToken }) {
+function Login({ setToken, setIsLoggedIn }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
@@ -22,11 +22,24 @@ function Login({ setToken }) {
       );
       const data = await response.json();
 
-      setToken(data.token);
-      localStorage.setItem("token", data.token);
-      setMessage("Login successful");
-      navigate("/protected");
+      // setToken(data.token);
+      // localStorage.setItem("token", data.token);
+      // setMessage("Login successful");
+      if (response.status === 200) {
+        //setIsLoggedIn(true);
+        //window.localStorage.setItem("isLoggedIn", true);
+        // window.localStorage.setItem(
+        //   "token",
+        //   "cocomero " + Date.now()
+        // );
+        window.localStorage.setItem("token", data.token);
+        setIsLoggedIn(true);
+        window.localStorage.setItem("isLoggedIn", true);
+        setToken(data);
+        navigate("/protected");
+      }
     } catch (error) {
+      console.log(error);
       setMessage("Login failed");
     }
 
@@ -34,6 +47,10 @@ function Login({ setToken }) {
     // localStorage.setItem("token", "banana " + Date.now());
     // navigate("/protected");
   };
+
+  // const login = () => {
+  //   console.log("ciao");
+  // };
 
   return (
     <div>

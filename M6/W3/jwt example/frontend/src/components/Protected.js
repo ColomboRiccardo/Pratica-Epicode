@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
+import { useNavigate } from "react-router";
 
 function Protected({ setToken }) {
   const [data, setData] = useState(null);
+  const navigate = useNavigate();
 
   const getData = async () => {
     const response = await fetch(
@@ -25,6 +27,7 @@ function Protected({ setToken }) {
   const logout = () => {
     localStorage.clear();
     setToken(null);
+    navigate("/login");
   };
   return (
     <div>
