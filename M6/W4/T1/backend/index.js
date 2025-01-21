@@ -24,7 +24,7 @@ server.get("/api/images", async (request, response) => {
   );
 
   const images = await pexelResponse.json();
-  response.json(images);
+  response.send(pexelResponse);
 });
 
 server.post("/login", (request, response) => {
